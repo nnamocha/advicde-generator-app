@@ -46,9 +46,10 @@
    }
 
    const getAndRenderAdvice = (data) => {
-      clickedBtn.onclick = () => {
-        const randomNum = Math.floor(Math.random()* 20)
 
+      clickedBtn.addEventListener('click',() => {
+        const randomNum = Math.floor(Math.random()* 20)
+        
         // Get random Adivce and Id from the API
         const generatedAdvice = data.slips[randomNum].advice;
         const generatedAdviceID = data.slips[randomNum].id
@@ -56,10 +57,10 @@
         // Update DOM
         adviceId.textContent = generatedAdviceID;
         advice.textContent = generatedAdvice;
-      }  
+      }  )
    }
 
-  //  fetchAdvice();
+   fetchAdvice();
 
   })
 </script>
